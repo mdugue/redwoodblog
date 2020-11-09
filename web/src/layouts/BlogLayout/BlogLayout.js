@@ -17,9 +17,16 @@ const BlogLayout = ({ children }) => {
             <li>
               <Link to={routes.contact()}>Contact</Link>
             </li>
-            <li>
-              <Link to={routes.posts()}>Admin</Link>
-            </li>
+            {isAuthenticated && (
+              <>
+                <li>
+                  <Link to={routes.posts()}>Admin posts</Link>
+                </li>
+                <li>
+                  <Link to={routes.images()}>Admin images</Link>
+                </li>
+              </>
+            )}
             <li>
               <a href="#" onClick={isAuthenticated ? logOut : logIn}>
                 {isAuthenticated ? 'Log Out' : 'Log In'}
