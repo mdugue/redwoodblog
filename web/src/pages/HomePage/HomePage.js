@@ -1,10 +1,10 @@
 import BlogPostsCell from 'src/components/BlogPostsCell'
 import BlogLayout from 'src/layouts/BlogLayout'
 
-const HomePage = () => {
+const HomePage = ({ page = 1 }) => {
   return (
     <BlogLayout>
-      <BlogPostsCell />
+      <BlogPostsCell page={page} />
     </BlogLayout>
   )
 }

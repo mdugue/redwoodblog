@@ -6,7 +6,13 @@ export const schema = gql`
     createdAt: DateTime!
   }
 
+  type PostPage {
+    posts: [Post!]!
+    count: Int!
+  }
+
   type Query {
+    postPage(page: Int): PostPage
     posts: [Post!]!
     post(id: Int!): Post
   }
